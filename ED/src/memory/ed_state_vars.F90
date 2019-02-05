@@ -17878,7 +17878,7 @@ module ed_state_vars
          nvar = nvar + 1
          call vtable_edio_r(npts,cgrid%basal_area                                          &
                            ,nvar,igr,init,cgrid%pyglob_id,var_len,var_len_global,max_ptrs  &
-                           ,'BASAL_AREA_PY  :146:hist:anal:mont:dail:dcyc')
+                           ,'BASAL_AREA_PY  :146:hist:anal:mont:dail:dcyc:year')
          call metadata_edio(nvar,igr,'Basal area'                                          &
                            ,   '[cm2/m2]','(n_pft,n_dbh,ipoly)')
       end if
