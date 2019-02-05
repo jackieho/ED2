@@ -15,6 +15,7 @@ subroutine structural_growth(cgrid, month)
                              , sitetype               & ! structure
                              , patchtype              ! ! structure
    use pft_coms       , only : q                      & ! intent(in)
+                             , buff                   & ! intent(in)
                              , qsw                    & ! intent(in)
                              , seedling_mortality     & ! intent(in)
                              , c2n_leaf               & ! intent(in)
@@ -225,7 +226,7 @@ subroutine structural_growth(cgrid, month)
                case (1)
                    ! reserve enough carbon for reflushing canopy and fine roots
                    bstorage_min = size2bl(cpatch%dbh(ico),cpatch%hite(ico),ipft)    &
-                                * (1. + q(ipft))
+                                * ((1. + q(ipft)) * buff(ipft))
                    bstorage_available = max(0., cpatch%bstorage(ico) - bstorage_min)
                end select
 
