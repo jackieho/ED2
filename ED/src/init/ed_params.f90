@@ -2534,6 +2534,15 @@ subroutine init_pft_alloc_params()
    q(16)    = 1.0
    q(17)    = 1.0
 
+   !----- Carbon storage buffer multiplier [no units; JHo thesis] ------------------------!
+   buff(1:4)  = 1.0
+   buff(5)    = 1.0
+   buff(6)    = 1.0
+   buff(7)    = 1.0
+   buff(8:10) = 1.0
+   buff(11)   = 1.0
+   buff(12:17)= 1.0
+
    sapwood_ratio(1:17) = 3900.0
 
    !---------------------------------------------------------------------------------------!
@@ -3859,6 +3868,7 @@ subroutine init_pft_derived_params()
       , c2n_stem             & ! intent(in)
       , hgt_min              & ! intent(in)
       , q                    & ! intent(in)
+      , buff                 & ! intent(in)
       , qsw                  & ! intent(in)
       , sla                  & ! intent(in)
       , pft_name16           & ! intent(in)
