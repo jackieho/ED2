@@ -510,7 +510,7 @@ module pft_coms
    !----- Mass ratio between fine root and leaves [kg_fine_roots]/[kg_leaves]. ------------!
    real   , dimension(n_pft)    :: q
    !----- Multiplier for carbon buffer (JHo thesis) [no units]. ---------------------------!
-   real   , dimension(n_pft)    :: buff
+   real   , dimension(n_pft)    :: mbuff
    !----- Mass ratio between sapwood and leaves [kg_sapwood]/[kg_leaves]. -----------------!
    real   , dimension(n_pft)    :: qsw
    real   , dimension(n_pft)    :: sapwood_ratio ! AREA ratio
