@@ -2323,7 +2323,7 @@ subroutine init_pft_alloc_params()
       , SLA                   & ! intent(out)
       , horiz_branch          & ! intent(out)
       , q                     & ! intent(out)
-      , buff                  & ! intent(out)
+      , mbuff                 & ! intent(out)
       , qsw                   & ! intent(out)
       , SRA                   & ! intent(out)
       , root_beta             & ! intent(out)
@@ -2536,13 +2536,13 @@ subroutine init_pft_alloc_params()
    q(17)    = 1.0
 
     !------ Carbon storage buffer multiplier [no units, JHo thesis]-------------------------!
-   buff(1:4)= 1.0
-   buff(5)  = 1.0
-   buff(6)  = 1.0
-   buff(7)  = 1.0
-   buff(8:10)=1.0
-   buff(11) = 1.0
-   buff(12:17)=1.0
+   mbuff(1:4) = 1.0
+   mbuff(5)   = 1.0
+   mbuff(6)   = 1.0
+   mbuff(7)   = 1.0
+   mbuff(8:10)= 1.0
+   mbuff(11)  = 1.0
+   mbuff(12:17)=1.0
 
    sapwood_ratio(1:17) = 3900.0
 
