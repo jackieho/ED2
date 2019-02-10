@@ -15,7 +15,7 @@ subroutine structural_growth(cgrid, month)
                              , sitetype               & ! structure
                              , patchtype              ! ! structure
    use pft_coms       , only : q                      & ! intent(in)
-                             , mbuff                   & ! intent(in)
+                             , mbuff                  & ! intent(in)
                              , qsw                    & ! intent(in)
                              , seedling_mortality     & ! intent(in)
                              , c2n_leaf               & ! intent(in)
