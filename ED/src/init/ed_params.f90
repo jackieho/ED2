@@ -5244,6 +5244,7 @@ subroutine init_ff_coms
       , ff_nhgt                   & ! intent(out)
       , min_oldgrowth             & ! intent(out)
       , coh_tolerance_max         & ! intent(out)
+      , fuse_dbh_max              & ! intent(out)
       , dark_cumlai_min           & ! intent(out)
       , dark_cumlai_max           & ! intent(out)
       , dark_cumlai_mult          & ! intent(out)
@@ -5275,6 +5276,7 @@ subroutine init_ff_coms
    lai_fuse_tol      = 0.8
    lai_tol           = 1.0
    ff_nhgt           = 8
+   fuse_dbh_max      = huge_num ! by default no threshold for fusion
    coh_tolerance_max = 10.0    ! Original 2.0
 
    !----- Define the number of height classes. --------------------------------------------!

@@ -997,8 +997,10 @@ recursive subroutine read_ed_xml_config(filename)
         if(texist) lai_tol = real(rval)
         call getConfigREAL  ('ff_nhgt','fusefiss',i,rval,texist)
         if(texist) ff_nhgt = real(rval)
-        call getConfigREAL  ('coh_tolerance_max','fusefiss',i,rval,texist)
+        call getConfigREAL  ('coh_tolerance_max','fusefiss',i,rval,texist)        
         if(texist) coh_tolerance_max = real(rval)
+        call getConfigREAL  ('fuse_dbh_max','fusefiss',i,rval,texist)
+        if(texist) fuse_dbh_max = real(rval)
 !        call getConfigREAL  ('ntol','fusefiss',i,rval,texist)
         
         call libxml2f90__ll_selecttag('UP','config',1) !move back up to top level
@@ -1760,6 +1762,7 @@ subroutine write_ed_xml_config
      call putConfigREAL("lai_tol",lai_tol)
      call putConfigINT ("ff_nhgt",ff_nhgt)
      call putConfigREAL("coh_tolerance_max",coh_tolerance_max)
+     call putConfigREAL("fuse_dbh_max",fuse_dbh_max)
   call libxml2f90_ll_closetag("fusefiss")
 
   !************   DISTURBANCE  *****************

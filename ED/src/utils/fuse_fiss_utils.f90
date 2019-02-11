@@ -572,6 +572,7 @@ module fuse_fiss_utils
                                      , lai_fuse_tol        & ! intent(in)
                                      , fuse_relax          & ! intent(in)
                                      , coh_tolerance_max   ! ! intent(in)
+                                     , fuse_dbh_max        ! ! intent(in)
       use ed_max_dims         , only : n_pft               ! ! intent(in)
       use mem_polygons        , only : maxcohort           ! ! intent(in)
       use allometry           , only : size2bl         ! ! function
@@ -725,6 +726,8 @@ module fuse_fiss_utils
                   ! 6. Both cohorts must have the same recruitment status with respect to  !
                   !    the census.                                                         !
                   ! 7. Both cohorts must have the same phenology status.                   !
+                  ! 8. The maximum dbh of the two cohorts should be smaller than           !
+                  !    fuse_dbh_max - Add by XXT to disable big tree fusion                !
                   !------------------------------------------------------------------------!
                   if (     cpatch%pft(donc)              == cpatch%pft(recc)               &
                      .and. lai_max                        < lai_fuse_tol*tolerance_mult    &
@@ -733,6 +736,7 @@ module fuse_fiss_utils
                      .and. cpatch%recruit_dbh     (donc) == cpatch%recruit_dbh(recc)       &
                      .and. cpatch%census_status   (donc) == cpatch%census_status(recc)     &
                      .and. cpatch%phenology_status(donc) == cpatch%phenology_status(recc)  &
+                     .and. max(cpatch%dbh(donc),cpatch%dbh(recc)) < fuse_dbh_max           &
                      ) then
 
                      !----- Proceed with fusion -------------------------------------------!

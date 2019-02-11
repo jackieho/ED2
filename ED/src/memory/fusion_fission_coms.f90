@@ -39,6 +39,10 @@ module fusion_fission_coms
    !----- Cohort maximum tolerance factor -------------------------------------------------!
    real    :: coh_tolerance_max
 
+   !---- dbh threshold for cohort fusion [cm]. Fusion is not allowed for cohorts bigger ---!
+   !---- than the threshold. --------------------------------------------------------------!
+   real    :: fuse_dbh_max
+
    !---- Patch fusion variables. ----------------------------------------------------------!
    real :: dark_cumlai_min
    real :: dark_cumlai_max
